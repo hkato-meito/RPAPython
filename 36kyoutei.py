@@ -110,6 +110,10 @@ else:
         pyperclip.copy(str(r['協定の有効期間(自)和暦']))  
         pyautogui.press("up")
         pyautogui.press("tab")
+        time.sleep(1)  # キーストローク間の待機時間
+
+        # 日本語入力OFF
+        pyautogui.hotkey('hanja')
         time.sleep(0.3)  # キーストローク間の待機時間
 
         text = str(r['協定の有効期間(自)年'])
@@ -137,6 +141,47 @@ else:
         time.sleep(0.3)  # キーストローク間の待機時間
 
         text = str(r['協定の有効期間(自)日'])
+        # 文字列を1文字ずつ対象アプリケーションに送信
+        for char in text:
+            print(char)
+            pyautogui.press(char)
+            # オプション: 各文字の間に遅延を入れる
+            time.sleep(0.5)
+        pyautogui.press("enter")
+        time.sleep(0.5)
+        pyautogui.press("tab")
+        time.sleep(0.3)  # キーストローク間の待機時間
+
+        pyperclip.copy(str(r['協定の有効期間(至)和暦']))  
+        pyautogui.press("up")
+        pyautogui.press("tab")
+        time.sleep(1)  # キーストローク間の待機時間
+
+        text = str(r['協定の有効期間(至)年'])
+        # 文字列を1文字ずつ対象アプリケーションに送信
+        for char in text:
+            print(char)
+            pyautogui.press(char)
+            # オプション: 各文字の間に遅延を入れる
+            time.sleep(0.5)
+        pyautogui.press("enter")
+        time.sleep(0.5)
+        pyautogui.press("tab")
+        time.sleep(0.3)  # キーストローク間の待機時間
+
+        text = str(r['協定の有効期間(至)月'])
+        # 文字列を1文字ずつ対象アプリケーションに送信
+        for char in text:
+            print(char)
+            pyautogui.press(char)
+            # オプション: 各文字の間に遅延を入れる
+            time.sleep(0.5)
+        pyautogui.press("enter")
+        time.sleep(0.5)
+        pyautogui.press("tab")
+        time.sleep(0.3)  # キーストローク間の待機時間
+
+        text = str(r['協定の有効期間(至)日'])
         # 文字列を1文字ずつ対象アプリケーションに送信
         for char in text:
             print(char)
